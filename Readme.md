@@ -1,7 +1,7 @@
 # Личный проект «Шесть городов»
 
 * Студент: [Мария Усынина](https://up.htmlacademy.ru/react/13/user/2234317).
-* Наставник: [Денис Уткин](https://htmlacademy.ru/profile/id2254997).
+* Наставник: [Идель Гатауллин](https://htmlacademy.ru/profile/id2271765).
 
 ---
 
