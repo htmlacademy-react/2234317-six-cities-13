@@ -1,18 +1,18 @@
-import FavoritesPage from '../../pages/favorites-page/favorites-page';
-import LoginPage from '../../pages//login-page/login-page';
+// import FavoritesPage from '../../pages/favorites-page/favorites-page';
+// import LoginPage from '../../pages//login-page/login-page';
 import MainPage from '../../pages/main-page/main-page';
-import OfferPage from '../../pages/offer-page/offer-page';
+// import OfferPage from '../../pages/offer-page/offer-page';
 
 type AppProps = {
-  errorsCount: number;
+  offersCount: number;
 }
 
-function App({errorsCount}: AppProps): JSX.Element {
+function App({offersCount}: AppProps): JSX.Element {
   return (
-    // <FavoritesPage errorsCount={errorsCount} />
-    // <LoginPage errorsCount={errorsCount} />
-    // <MainPage errorsCount={errorsCount} />
-    <OfferPage errorsCount={errorsCount} />
+    // <FavoritesPage />
+    // <LoginPage />
+    <MainPage offersCount={offersCount} />
+    // <OfferPage />
   );
 }
 

@@ -1,8 +1,4 @@
-type LoginPageProps = {
-  errorsCount: number;
-}
-
-function LoginPage({errorsCount}: LoginPageProps): JSX.Element {
+function LoginPage(): JSX.Element {
   return (
     <div className="page page--gray page--login">
       <header className="header">
