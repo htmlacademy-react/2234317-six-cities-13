@@ -1,6 +1,5 @@
 import {Link} from 'react-router-dom';
-import {Helmet} from 'react-helmet-async';
-import Header from '../../components/header/header';
+import MainLayout from '../../layouts/main-layout/main-layout';
 import PlaceCard from '../../components/place-card/place-card';
 
 type MainPageProps = {
@@ -9,11 +8,7 @@ type MainPageProps = {
 
 function MainPage({offersCount}: MainPageProps): JSX.Element {
   return (
-    <div className="page page--gray page--main">
-      <Helmet>
-        <title>6 cities</title>
-      </Helmet>
-      <Header />
+    <MainLayout className="page--gray page--main" pageTitle='6 cities'>
       <main className="page__main page__main--index">
         <h1 className="visually-hidden">Cities</h1>
         <div className="tabs">
@@ -84,7 +79,7 @@ function MainPage({offersCount}: MainPageProps): JSX.Element {
           </div>
         </div>
       </main>
-    </div>
+    </MainLayout>
   );
 }
 

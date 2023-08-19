@@ -1,15 +1,9 @@
 import {Link} from 'react-router-dom';
-import {Helmet} from 'react-helmet-async';
-import Header from '../../components/header/header';
-import Footer from '../../components/footer/footer';
+import MainLayout from '../../layouts/main-layout/main-layout';
 
 function FavoritesPage(): JSX.Element {
   return (
-    <div className="page">
-      <Helmet>
-        <title>6 cities: favorites</title>
-      </Helmet>
-      <Header />
+    <MainLayout pageTitle='6 cities: favorites' withFooter>
       <main className="page__main page__main--favorites">
         <div className="page__favorites-container container">
           <section className="favorites">
@@ -139,8 +133,7 @@ function FavoritesPage(): JSX.Element {
           </section>
         </div>
       </main>
-      <Footer />
-    </div>
+    </MainLayout>
   );
 }
 

@@ -1,14 +1,15 @@
-import {Link} from 'react-router-dom';
-import {Helmet} from 'react-helmet-async';
-import Header from '../../components/header/header';
+import {Link, useParams} from 'react-router-dom';
+import MainLayout from '../../layouts/main-layout/main-layout';
 
 function OfferPage(): JSX.Element {
+  const params = useParams();
+  if (params.id) {
+    // eslint-disable-next-line no-console
+    console.log(params);
+  }
+
   return (
-    <div className="page">
-      <Helmet>
-        <title>6 cities: offer</title>
-      </Helmet>
-      <Header />
+    <MainLayout pageTitle='6 cities: offer'>
       <main className="page__main page__main--offer">
         <section className="offer">
           <div className="offer__gallery-container container">
@@ -311,7 +312,7 @@ function OfferPage(): JSX.Element {
           </section>
         </div>
       </main>
-    </div>
+    </MainLayout>
   );
 }
 

@@ -1,24 +1,9 @@
 import {Link} from 'react-router-dom';
-import {Helmet} from 'react-helmet-async';
+import MainLayout from '../../layouts/main-layout/main-layout';
 
 function LoginPage(): JSX.Element {
   return (
-    <div className="page page--gray page--login">
-      <Helmet>
-        <title>6 cities: authorization</title>
-      </Helmet>
-      <header className="header">
-        <div className="container">
-          <div className="header__wrapper">
-            <div className="header__left">
-              <Link to="/" className="header__logo-link">
-                <img className="header__logo" src="img/logo.svg" alt="6 cities logo" width="81" height="41" />
-              </Link>
-            </div>
-          </div>
-        </div>
-      </header>
-
+    <MainLayout className="page--gray page--login" pageTitle='6 cities: authorization'>
       <main className="page__main page__main--login">
         <div className="page__login-container container">
           <section className="login">
@@ -44,7 +29,7 @@ function LoginPage(): JSX.Element {
           </section>
         </div>
       </main>
-    </div>
+    </MainLayout>
   );
 }
 

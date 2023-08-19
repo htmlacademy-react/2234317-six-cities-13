@@ -1,14 +1,9 @@
 import {Link} from 'react-router-dom';
-import {Helmet} from 'react-helmet-async';
-import Header from '../../components/header/header';
+import MainLayout from '../../layouts/main-layout/main-layout';
 
 function NotFoundPage(): JSX.Element {
   return (
-    <div className="page page--gray page--main">
-      <Helmet>
-        <title>6 cities: not found</title>
-      </Helmet>
-      <Header />
+    <MainLayout className="page--gray page--main" pageTitle='6 cities: not found'>
       <main className="page__main page__main--favorites page__main--favorites-empty">
         <div className="page__favorites-container container">
           <section className="favorites favorites--empty">
@@ -20,7 +15,7 @@ function NotFoundPage(): JSX.Element {
           </section>
         </div>
       </main>
-    </div>
+    </MainLayout>
   );
 }
 
