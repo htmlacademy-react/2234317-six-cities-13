@@ -3,7 +3,7 @@ import MainLayout from '../../layouts/main-layout/main-layout';
 
 function LoginPage(): JSX.Element {
   return (
-    <MainLayout className="page--gray page--login" pageTitle='6 cities: authorization'>
+    <MainLayout className="page--gray page--login" pageTitle="6 cities: authorization">
       <main className="page__main page__main--login">
         <div className="page__login-container container">
           <section className="login">
