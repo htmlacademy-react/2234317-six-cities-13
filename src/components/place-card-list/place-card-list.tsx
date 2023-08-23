@@ -5,13 +5,19 @@ import {PlaceCardType} from '../../types/place-card';
 type PlaceCardListProps = {
   offers: Offers;
   type: PlaceCardType;
+  onCardListItemActive: (offerId: string) => void;
 }
 
-function PlaceCardList({offers, type}: PlaceCardListProps): JSX.Element {
+function PlaceCardList({offers, type, onCardListItemActive}: PlaceCardListProps): JSX.Element {
   return (
     <>
       {offers.map((offer) => (
-        <PlaceCard key={offer.id} offer={offer} type={type} />
+        <PlaceCard
+          key={offer.id}
+          offer={offer}
+          type={type}
+          onCardActive={onCardListItemActive}
+        />
       ))}
     </>
   );

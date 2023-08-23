@@ -1,4 +1,5 @@
 import {useParams} from 'react-router-dom';
+import {useState} from 'react';
 import classNames from 'classnames';
 import {getRatingInPercents} from '../../utils/common';
 import MainLayout from '../../layouts/main-layout/main-layout';
@@ -9,8 +10,9 @@ import OfferHost from '../../components/offer/host/host';
 import OfferReviews from '../../components/offer/reviews/reviews';
 import OfferReviewsForm from '../../components/offer/reviews-form/reviews-form';
 import PlaceCardList from '../../components/place-card-list/place-card-list';
-import {Offers} from '../../types/offer';
+import {Offer, Offers} from '../../types/offer';
 import {Comments} from '../../types/comment';
+import {NO_CARD_ID} from '../../const';
 
 type OfferPageProps = {
   offers: Offers;
@@ -19,11 +21,14 @@ type OfferPageProps = {
 
 function OfferPage({offers, reviews}: OfferPageProps): JSX.Element {
   const params = useParams();
-  const offer = offers.find((item) => item.id === params.id);
+  const offer = offers.find((item) => item.id === params.id) as Offer;
   if (!offer) {
-    return <div></div>;
-    //navigate(AppRoute.NotFound);
+    /* navigate */
   }
+
+  const [activeOfferId, setActiveOfferId] = useState(NO_CARD_ID);
+  /* eslint-disable no-console */
+  console.log(activeOfferId);
 
   return (
     <MainLayout pageTitle="6 cities: offer">
@@ -83,7 +88,11 @@ function OfferPage({offers, reviews}: OfferPageProps): JSX.Element {
           <section className="near-places places">
             <h2 className="near-places__title">Other places in the neighbourhood</h2>
             <div className="near-places__list places__list">
-              <PlaceCardList offers={offers} type="nearPlaces" />
+              <PlaceCardList
+                offers={offers}
+                type="nearPlaces"
+                onCardListItemActive={setActiveOfferId}
+              />
             </div>
           </section>
         </div>

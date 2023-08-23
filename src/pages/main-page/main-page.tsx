@@ -1,14 +1,20 @@
+import {useState} from 'react';
 import MainLayout from '../../layouts/main-layout/main-layout';
 import LocationList from '../../components/main/location-list/location-list';
 import PlaceCardList from '../../components/place-card-list/place-card-list';
 import Sort from '../../components/main/sort/sort';
 import {Offers} from '../../types/offer';
+import {NO_CARD_ID} from '../../const';
 
 type MainPageProps = {
   offers: Offers;
 }
 
-function MainPage({offers}: MainPageProps): JSX.Element {
+function MainPage({ offers }: MainPageProps): JSX.Element {
+  const [activeOfferId, setActiveOfferId] = useState(NO_CARD_ID);
+  /* eslint-disable no-console */
+  console.log(activeOfferId);
+
   return (
     <MainLayout className="page--gray page--main" pageTitle="6 cities">
       <main className="page__main page__main--index">
@@ -21,7 +27,11 @@ function MainPage({offers}: MainPageProps): JSX.Element {
               <b className="places__found">{offers.length} places to stay in Amsterdam</b>
               <Sort />
               <div className="cities__places-list places__list tabs__content">
-                <PlaceCardList offers={offers} type="cities" />
+                <PlaceCardList
+                  offers={offers}
+                  type="cities"
+                  onCardListItemActive={setActiveOfferId}
+                />
               </div>
             </section>
             <div className="cities__right-section">

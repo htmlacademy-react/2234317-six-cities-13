@@ -7,6 +7,7 @@ import {PlaceCardType} from '../../types/place-card';
 type PlaceCardProps = {
   offer: Offer;
   type: PlaceCardType;
+  onCardActive: (offerId: string) => void;
 }
 
 const placeCardProperties = {
@@ -33,10 +34,10 @@ const placeCardProperties = {
   }
 };
 
-function PlaceCard({offer, type}: PlaceCardProps): JSX.Element {
+function PlaceCard({offer, type, onCardActive}: PlaceCardProps): JSX.Element {
   const properties = placeCardProperties[type];
   return (
-    <article className={classNames('place-card', `${properties.classNamePrefix}__card`)}>
+    <article className={classNames('place-card', `${properties.classNamePrefix}__card`)} onMouseOver={() => onCardActive(offer.id)}>
       {offer.isPremium &&
       <div className="place-card__mark">
         <span>Premium</span>

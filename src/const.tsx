@@ -1,6 +1,7 @@
 export const MAX_RATING_NUMBER = 5;
 export const MAX_PERCENT_NUMBER = 100;
 export const MAX_OFFER_IMG_COUNT = 6;
+export const NO_CARD_ID = '-1';
 
 export enum Locations {
   Paris = 'Paris',

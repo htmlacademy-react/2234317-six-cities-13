@@ -3,13 +3,18 @@ import {Offers} from '../../../types/offer';
 
 type FavoritesListProps = {
   offers: Offers;
+  onCardListItemActive: (offerId: string) => void;
 }
 
-function FavoritesList({offers}: FavoritesListProps): JSX.Element {
+function FavoritesList({offers, onCardListItemActive}: FavoritesListProps): JSX.Element {
   return (
     <ul className="favorites__list">
       {Object.values(offers).map((offer) => (
-        <FavoritesItem key={offer.id} offers={offers} />
+        <FavoritesItem
+          key={offer.id}
+          offers={offers}
+          onCardListItemActive={onCardListItemActive}
+        />
       ))}
     </ul>
   );

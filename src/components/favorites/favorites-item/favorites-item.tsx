@@ -4,9 +4,10 @@ import {Offers} from '../../../types/offer';
 
 type FavoritesItemProps = {
   offers: Offers;
+  onCardListItemActive: (offerId: string) => void;
 }
 
-function FavoritesItem({offers}: FavoritesItemProps): JSX.Element {
+function FavoritesItem({offers, onCardListItemActive}: FavoritesItemProps): JSX.Element {
   return (
     <li className="favorites__locations-items">
       <div className="favorites__locations locations locations--current">
@@ -17,7 +18,11 @@ function FavoritesItem({offers}: FavoritesItemProps): JSX.Element {
         </div>
       </div>
       <div className="favorites__places">
-        <PlaceCardList offers={offers} type="favorites" />
+        <PlaceCardList
+          offers={offers}
+          type="favorites"
+          onCardListItemActive={onCardListItemActive}
+        />
       </div>
     </li>
   );
