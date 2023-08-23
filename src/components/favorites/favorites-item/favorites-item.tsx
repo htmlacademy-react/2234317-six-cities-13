@@ -17,7 +17,7 @@ function FavoritesItem({offers}: FavoritesItemProps): JSX.Element {
         </div>
       </div>
       <div className="favorites__places">
-        <PlaceCardList offers={offers} classNamePrefix="favorites" type="favorites" />
+        <PlaceCardList offers={offers} type="favorites" />
       </div>
     </li>
   );

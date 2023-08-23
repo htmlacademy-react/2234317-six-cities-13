@@ -21,7 +21,7 @@ function MainPage({offers}: MainPageProps): JSX.Element {
               <b className="places__found">{offers.length} places to stay in Amsterdam</b>
               <Sort />
               <div className="cities__places-list places__list tabs__content">
-                <PlaceCardList offers={offers} classNamePrefix="cities" type="cities" />
+                <PlaceCardList offers={offers} type="cities" />
               </div>
             </section>
             <div className="cities__right-section">

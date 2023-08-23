@@ -83,7 +83,7 @@ function OfferPage({offers, reviews}: OfferPageProps): JSX.Element {
           <section className="near-places places">
             <h2 className="near-places__title">Other places in the neighbourhood</h2>
             <div className="near-places__list places__list">
-              <PlaceCardList offers={offers} classNamePrefix="near-places" type="nearPlaces" />
+              <PlaceCardList offers={offers} type="nearPlaces" />
             </div>
           </section>
         </div>

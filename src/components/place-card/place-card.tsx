@@ -2,39 +2,48 @@ import {Link} from 'react-router-dom';
 import classNames from 'classnames';
 import {getRatingInPercents} from '../../utils/common';
 import {Offer} from '../../types/offer';
+import {PlaceCardType} from '../../types/place-card';
 
 type PlaceCardProps = {
   offer: Offer;
-  classNamePrefix: string;
-  type: 'favorites' | 'nearPlaces' | 'cities';
+  type: PlaceCardType;
 }
 
-const imageSizes = {
+const placeCardProperties = {
   cities: {
-    width: 260,
-    height: 200
+    img: {
+      width: 260,
+      height: 200
+    },
+    classNamePrefix: 'cities'
   },
   nearPlaces: {
-    width: 260,
-    height: 200
+    img: {
+      width: 260,
+      height: 200
+    },
+    classNamePrefix: 'near-places'
   },
   favorites: {
-    width: 150,
-    height: 110
+    img: {
+      width: 150,
+      height: 110
+    },
+    classNamePrefix: 'favorites'
   }
 };
 
-function PlaceCard({offer, classNamePrefix, type}: PlaceCardProps): JSX.Element {
-  const size = imageSizes[type];
+function PlaceCard({offer, type}: PlaceCardProps): JSX.Element {
+  const properties = placeCardProperties[type];
   return (
-    <article className={classNames('place-card', `${classNamePrefix}__card`)}>
+    <article className={classNames('place-card', `${properties.classNamePrefix}__card`)}>
       {offer.isPremium &&
       <div className="place-card__mark">
         <span>Premium</span>
       </div>}
-      <div className={classNames('place-card__image-wrapper', `${classNamePrefix}__image-wrapper`)}>
+      <div className={classNames('place-card__image-wrapper', `${properties.classNamePrefix}__image-wrapper`)}>
         <Link to={`/offer/${offer.id}`}>
-          <img className="place-card__image" src={offer.images[0]} width={size.width} height={size.height} alt="Place image" />
+          <img className="place-card__image" src={offer.images[0]} width={properties.img.width} height={properties.img.height} alt="Place image" />
         </Link>
       </div>
       <div className="place-card__info">
