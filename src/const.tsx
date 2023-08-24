@@ -3,6 +3,18 @@ export const MAX_PERCENT_NUMBER = 100;
 export const MAX_OFFER_IMG_COUNT = 6;
 export const NO_CARD_ID = '-1';
 
+export const NO_FORM_DATA = {
+  id: '-1',
+  date: '',
+  user: {
+    name: '',
+    avatarUrl: '',
+    isPro: false
+  },
+  comment: '',
+  rating: 0
+};
+
 export enum Locations {
   Paris = 'Paris',
   Cologne = 'Cologne',
