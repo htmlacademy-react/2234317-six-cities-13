@@ -20,7 +20,7 @@ type OfferReviewsFormRatingProps = {
 function OfferReviewsFormRating({ onRatingChange }: OfferReviewsFormRatingProps): JSX.Element {
   return (
     <div className="reviews__rating-form form__rating">
-      {Object.keys(titles).map((index) => (
+      {Object.keys(titles).reverse().map((index) => (
         <OfferReviewsFormRatingItem
           key={index}
           ratingNumber={index}

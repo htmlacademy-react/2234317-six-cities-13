@@ -2,6 +2,7 @@ export const MAX_RATING_NUMBER = 5;
 export const MAX_PERCENT_NUMBER = 100;
 export const MAX_OFFER_IMG_COUNT = 6;
 export const NO_CARD_ID = '-1';
+export const MAX_COMMENT_LENGTH = 50;
 
 export const NO_FORM_DATA = {
   id: '-1',
